@@ -3,6 +3,7 @@ import random
 
 t.colormode(255)
 tim = t.Turtle()
+tim.speed("fastest")
 
 def random_color():
     r = random.randint(0, 255)
@@ -11,15 +12,12 @@ def random_color():
     color = (r, g, b)
     return color
 
-tim.pensize(10)
-tim.speed("fastest")
-# colours = ["CornflowerBlue", "SpringGreen", "RosyBrown", "wheat", "RoyalBlue", "OliveDrab", "firebrick", "SlateGray", "DarkOrchid"]
-directions = [0, 90, 180, 270]
-
-for _ in range(200):
+for _ in range(100):
     tim.color(random_color())
-    tim.forward(30)
-    tim.setheading(random.choice(directions))
+    tim.circle(100)
+    tim.setheading(tim.heading() + 10)
 
+screen = t.Screen()
+screen.exitonclick()
 
 
